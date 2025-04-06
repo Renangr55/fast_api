@@ -10,7 +10,7 @@ from schemas import TeamSoccerBase, TeamSoccerCreate, TeamSoccerResponse
 
 app = FastAPI(title='SoccerAPI', description='created Soccer API')
 
-@app.get('/teste')
+@app.get('/')
 async def get_test():
     return {'sucess': 'foii'}
 
