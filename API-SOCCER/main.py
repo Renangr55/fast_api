@@ -14,7 +14,7 @@ app = FastAPI(title='SoccerAPI', description='created Soccer API')
 async def get_test():
     return {'sucess': 'foii'}
 
-@app.get('/teste/SocccerTeams/')
+@app.get('/SocccerTeams/')
 async def get_soccer_teams(db: AsyncSession = Depends(get_db)):
     results = await db.execute(select(SoccerTeam))
     team_soccers = results.scalars().all()
@@ -23,7 +23,7 @@ async def get_soccer_teams(db: AsyncSession = Depends(get_db)):
 
 
 
-@app.post('/teste/SocccerTeams/',status_code=status.HTTP_201_CREATED)
+@app.post('/SocccerTeams/Criar/',status_code=status.HTTP_201_CREATED)
 async def create_soccer_teams(SoccerTeams: TeamSoccerBase, db: AsyncSession = Depends(get_db)):
    
     db_soccerTeam = SoccerTeam(**SoccerTeams.model_dump())
