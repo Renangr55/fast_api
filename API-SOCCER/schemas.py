@@ -11,6 +11,9 @@ class TeamSoccerBase(BaseModel):
     coach : str
     league : str
     
+
+
+    
 class TeamSoccerCreate(TeamSoccerBase):
     pass
 
@@ -31,8 +34,11 @@ class TeamSoccerUpdate(BaseModel):
     number_titles : Optional[int] = None
     coach : Optional[str] = None
     league : Optional[str] = None
+    image_path : Optional[str] = None
+    
     
     class Config:
-        from_attributes = True 
+        from_attributes = True
+     
     
     
