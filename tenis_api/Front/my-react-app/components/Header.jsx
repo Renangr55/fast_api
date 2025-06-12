@@ -3,9 +3,10 @@ import airJordan from "../src/assets/air-jordan.png";
 import { TfiAlignJustify } from "react-icons/tfi";
 
 
+
 export const Header = () => {
     return (
-        <div className="bg-black w-434 h-100{%} flex justify-between">
+        <div className="bg-black w-100% h-100{%} flex justify-between">
             <img className="w-20 h-20" src={airJordan} alt="" />
             
             <nav className="flex justify-center items-center">
