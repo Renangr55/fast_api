@@ -4,6 +4,7 @@ import banner from "../src/assets/banner.png"
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 
+
 export const Home = () => {
   return (
     <div className="grid grid-rows-[auto_1fr_auto] min-h-screen">
