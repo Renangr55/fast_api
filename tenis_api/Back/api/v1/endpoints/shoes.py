@@ -17,7 +17,7 @@ from core.deps import get_session
 router = APIRouter()
 
 # create
-@router.post("create/", status_code=status.HTTP_201_CREATED, response_model=ShoesSchemas)
+@router.post("/create", status_code=status.HTTP_201_CREATED, response_model=ShoesSchemas)
 async def created_shoes(shoes:ShoesSchemas, db: AsyncSession = Depends(get_session)):
     new_shoes = ShoesModel(name=shoes.name, brand=shoes.brand,price=shoes.price, gender=shoes.gender, numbering=shoes.numbering, color=shoes.color, description=shoes.description)
     

@@ -6,10 +6,14 @@ from api.v1.api import api_router
 
 app = FastAPI(title="Shoes API - fastapi Sqlite")
 app.include_router(api_router, prefix=settings.API_V1_STR)
-origins = ["http://localhost","http://localhost:5173"]
+origins = ["http://localhost","http://localhost:3000"]
 
-app.add_middleware(CORSMiddleware, allow_origins=origins, allow_credentials=True,
-allow_methods=["*"], allow_headers=["*"])
+app.add_middleware(
+    CORSMiddleware, 
+    allow_origins=origins, 
+    allow_credentials=True,
+    allow_methods=["*"], 
+    allow_headers=["*"])
 
 @app.get("/")
 async def teste():
