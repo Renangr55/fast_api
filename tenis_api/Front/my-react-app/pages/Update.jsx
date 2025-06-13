@@ -4,29 +4,38 @@ import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { Link } from "react-router";
 
-
+// verificando se os dados foram enviados
 const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Dados enviados:', formData);
-    // Aqui você pode fazer um fetch ou axios para enviar para o back-end
+    
 };
 
 export const Update = () => {
     return (
+
         <div className="grid grid-rows-[auto_1fr_auto] min-h-screen">
+
+            {/* Componente header  */}
             <Header />
-        
+    
+
+            {/* Grid layout  */}
             <div className="grid grid-cols-[250px_1fr]">
                
                 <Navbar />
-            
+
+            {/* Página main  */}           
                 <main className="bg-white p-6 flex justify-center items-center">
                     
                     
+
+                    {/* Forms  */}
                     <form onSubmit={handleSubmit} className=" w-200 h-200 bg-gray-900 max-w-md mx-auto p-4 border rounded block font-bold">
-                        <h1 className="text-white flex justify-self-center items-center">Update</h1>
+                        <h1 className="text-white flex justify-center items-center">Update</h1>
                         
                         <div className="mb-4">
+                            {/* ID */}
                             <label  htmlFor="id" className=" text-amber-50 block font-bold">ID:</label>
                             <input
                             type="id"
@@ -38,6 +47,7 @@ export const Update = () => {
                         </div>
 
                         <div className="mb-4">
+                            {/* Name */}
                             <label  htmlFor="name" className=" text-amber-50 block font-bold">name:</label>
                             <input
                             type="name"
@@ -49,6 +59,7 @@ export const Update = () => {
                         </div>
                         
                         <div className="mb-4">
+                            {/* Brand  */}
                             <label  htmlFor="brand" className=" text-amber-50 block font-bold">brand:</label>
                             <input
                             type="brand"
@@ -60,6 +71,7 @@ export const Update = () => {
                         </div>
 
                         <div className="mb-4">
+                            {/* Price  */}
                             <label  htmlFor="price" className=" text-amber-50 block font-bold">price:</label>
                             <input
                             type="price"
@@ -71,6 +83,7 @@ export const Update = () => {
                         </div>
 
                         <div className="mb-4">
+                            {/* Gender  */}
                             <label  htmlFor="gender" className=" text-amber-50 block font-bold">gender:</label>
                             <input
                             type="gender"
@@ -82,6 +95,7 @@ export const Update = () => {
                         </div>
 
                         <div className="mb-4">
+                            {/* Numbering  */}
                             <label  htmlFor="numbering" className=" text-amber-50 block font-bold">numbering:</label>
                             <input
                             type="numbering"
@@ -93,6 +107,7 @@ export const Update = () => {
                         </div>
 
                         <div className="mb-4">
+                            {/* Color */}
                             <label  htmlFor="color" className=" text-amber-50 block font-bold">color:</label>
                             <input
                             type="text"
@@ -104,6 +119,7 @@ export const Update = () => {
                         </div>
 
                         <div className="mb-4">
+                            {/* Description  */}
                             <label  htmlFor="description" className=" text-amber-50 block font-bold">description:</label>
                             <input
                             type="description"

@@ -27,7 +27,7 @@ async def created_shoes(shoes:ShoesSchemas, db: AsyncSession = Depends(get_sessi
     return shoes
 
 # read
-@router.get("list/", response_model=list[ShoesSchemas])
+@router.get("/list", response_model=list[ShoesSchemas])
 async def get_shoes(db: AsyncSession = Depends(get_session)):
     async with db as session:
         query = select(ShoesModel)
@@ -37,7 +37,7 @@ async def get_shoes(db: AsyncSession = Depends(get_session)):
         return shoes
     
 #read with id
-@router.get("list/{shoes_id}",status_code=status.HTTP_200_OK, response_model=ShoesSchemas)
+@router.get("/list/{shoes_id}",status_code=status.HTTP_200_OK, response_model=ShoesSchemas)
 async def get_shoes(shoes_id: int, db: AsyncSession = Depends(get_session)):
     async with db as session:
         query = select(ShoesModel).filter(ShoesModel.id == shoes_id)
@@ -50,7 +50,7 @@ async def get_shoes(shoes_id: int, db: AsyncSession = Depends(get_session)):
             raise HTTPException(detail="Shoes not found", status_code=status.HTTP_404_NOT_FOUND)
     
 #put
-@router.put("update/{shoes_id}", status_code=status.HTTP_202_ACCEPTED, response_model=ShoesSchemas)
+@router.put("/update/{shoes_id}", status_code=status.HTTP_202_ACCEPTED, response_model=ShoesSchemas)
 async def put_shoes(shoes_id: int, shoes: ShoesSchemas, db: AsyncSession = Depends(get_session)):
     async with db as session:
         query = select(ShoesModel).filter(ShoesModel.id == shoes_id)
@@ -72,7 +72,7 @@ async def put_shoes(shoes_id: int, shoes: ShoesSchemas, db: AsyncSession = Depen
         
         
 #delete       
-@router.delete("delete/{shoes_id}",status_code=status.HTTP_204_NO_CONTENT)
+@router.delete("/delete/{shoes_id}",status_code=status.HTTP_204_NO_CONTENT)
 async def delete_shoes(shoes_id: int, db: AsyncSession = Depends(get_session)):
     async with db as session:
         query = select(ShoesModel).filter(ShoesModel.id == shoes_id)

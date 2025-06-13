@@ -7,6 +7,7 @@ import { Link } from "react-router";
 import axios from "axios";
 
 export const Create = () => {
+    // tipos de dados
   const [formData, setFormData] = useState({
     name: '',
     brand: '',
@@ -18,14 +19,14 @@ export const Create = () => {
   });
 
 
-  const handleChange = (e) => {
+  const handleChange = (e) => { // atualizar o estado do componente
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => { // função para processar os dados
     e.preventDefault();
     try {
       const resposta = await axios.post('http://localhost:8000/shoes/create', formData);
@@ -38,10 +39,13 @@ export const Create = () => {
 
     return (
         <div className="grid grid-rows-[auto_1fr_auto] min-h-screen">
+            
+            {/* Componente Header */}
             <Header />
         
             <div className="grid grid-cols-[250px_1fr]">
-               
+            
+            {/* Componente Header */}               
                 <Navbar />
             
                 <main className="bg-white p-6 flex justify-center items-center">
@@ -51,6 +55,7 @@ export const Create = () => {
                         <h1 className="text-white flex justify-self-center items-center">Create</h1>
                         
                         <div className="mb-4">
+                            {/* name */}
                             <label  htmlFor="name" className=" text-amber-50 block font-bold">name:</label>
                             <input
                             type="text"
@@ -64,6 +69,7 @@ export const Create = () => {
                         </div>
 
                         <div className="mb-4">
+                            {/* Brand */}
                             <label  htmlFor="brand" className=" text-amber-50 block font-bold">brand:</label>
                             <input
                             type="text"
@@ -78,6 +84,7 @@ export const Create = () => {
                         </div>
 
                         <div className="mb-4">
+                            {/* price */}
                             <label  htmlFor="price" className=" text-amber-50 block font-bold">price:</label>
                             <input
                             type="number"
@@ -92,6 +99,7 @@ export const Create = () => {
                         </div>
 
                         <div className="mb-4">
+                            {/* gender */}
                             <label  htmlFor="gender" className=" text-amber-50 block font-bold">gender:</label>
                             <input
                             type="text"
@@ -106,6 +114,7 @@ export const Create = () => {
                         </div>
 
                         <div className="mb-4">
+                            {/* numbering */}
                             <label  htmlFor="numbering" className=" text-amber-50 block font-bold">numbering:</label>
                             <input
                             type="number"
@@ -120,6 +129,7 @@ export const Create = () => {
                         </div>
 
                         <div className="mb-4">
+                            {/* Color */}
                             <label  htmlFor="Color" className=" text-amber-50 block font-bold">Color:</label>
                             <input
                             type="text"
@@ -134,6 +144,7 @@ export const Create = () => {
                         </div>
 
                         <div className="mb-4">
+                            {/* Description */}
                             <label  htmlFor="description" className=" text-amber-50 block font-bold">description:</label>
                             <input
                             type="text"

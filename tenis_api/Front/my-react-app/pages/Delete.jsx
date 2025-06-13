@@ -34,11 +34,11 @@ export const Delete = () => {
                         
                         <div className="mb-4">
 
-                            <label  htmlFor="name" className=" text-amber-50 block font-bold">ID</label>
+                            <label  htmlFor="ID" className=" text-amber-50 block font-bold">ID</label>
                             <input
-                            type="text"
-                            id="name"
-                            name="name"
+                            type="number"
+                            id="ID"
+                            name="ID"
                             
                             className="bg-white w-full border p-2 rounded text-black"
                             />
